@@ -1,0 +1,39 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+<form method="POST" class="post-form" action="{% url 'updatetimetable' timetable.id %}">  
+    {% csrf_token %}  
+<div class="container">  
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Update Details for {{timetable.invigilator.name}}</h3>  
+</div>  
+</div>  
+<div class="form-group row">  
+    <label class="col-sm-2 col-form-label">ID:</label>  
+    <div class="col-sm-4">  
+        {{  timetable.invigilator.pk }} 
+    </div>  
+    </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Date:</label>  
+    <div class="col-sm-4">  
+        <input type="date" name="on_date" id="id_on_date"required maxlength="3" value="{{  timetable.on_date }}" />  
+    </div>  
+    </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Free Time Slot:</label>  
+    <div class="col-sm-4">  
+        <input type="time" name="free_time" id="id_free_time"  required value="{{  timetable.free_time }}" />  
+    </div>  
+    </div>
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-success">Update</button>  
+</div>  
+</div>  
+</div>  
+</form> 
+{%endblock content%}

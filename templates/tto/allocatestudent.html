@@ -1,0 +1,20 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+    <h5 style="font-family: Arial, Helvetica, sans-serif;">Please check the uploaded files once again before clicking on Generate Student Allocation List</h5>
+    <div><a href="/adminland/uploadedlist">
+      <button class="btn btn-primary">
+      Check Uplaoded Excel Files</button>
+    </a></div>
+    <div><label for=""></label></div>
+    <div><a href="/adminland/studalloc">
+    <button class="btn btn-primary">Generate Student Allocation List</button>
+    </a></div>
+    <div><label for=""></label></div>
+    <div><h5 style="font-family: Arial, Helvetica, sans-serif;">{{success}}</h5></div>
+    
+    <div><a href="/media/excel/studentallocationlist.csv">
+    
+      <button class="btn btn-primary">Download Student Allocation List</button>
+    </a></div>
+    
+{%endblock content%}

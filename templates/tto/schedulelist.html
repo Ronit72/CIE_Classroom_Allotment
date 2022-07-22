@@ -1,0 +1,35 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+  <table class="table">
+    <thead>
+        <tr>
+            <th style = "float:left">Name</th>
+            <th style = "float:center">Download</th>
+            <th style = "float:right">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for schedule in schedules%}
+            <tr>
+                <td>{{schedule.title}}</td>
+                <td>
+                   
+                    <form method="post" action="{{schedule.pdf.url}}" >
+                        {%csrf_token %}
+                        <button type="submit" class="btn btn-primary" style = "float:center">Download</button>
+                            
+                        </form>
+                </td>
+                <td>
+                    <form method="post" action="{% url 'delete_schedule' schedule.pk %}" >
+                    {%csrf_token %}
+                    <button type="submit" class="btn btn-danger" style = "float:right">Delete</button>
+                        
+                    </form>
+
+                </td>
+            </tr>
+        {%endfor%}
+    </tbody>
+  </table>
+{%endblock content%}

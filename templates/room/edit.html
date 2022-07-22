@@ -1,0 +1,39 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+<form method="POST" class="post-form" action="{% url 'updateroom' room.room_no %}">  
+    {% csrf_token %}  
+<div class="container">  
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Update Details</h3>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Room No:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="room_no" id="id_room_no"   required maxlength="20" value="{{ room.room_no }}"/>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Capacity:</label>  
+<div class="col-sm-4">  
+    <input type="number" name="capacity" id="id_capacity" max='999' min='1' required maxlength="100" value="{{ room.capacity }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<!--<label class="col-sm-2 col-form-label">Availability Status:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="availability_status" id="id_availability_status" required maxlength="25" value="{{  room.availability_status}}" />  
+</div>  
+</div>-->
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-success">Update</button>  
+</div>  
+</div>  
+</div>  
+</form> 
+{%endblock content%}

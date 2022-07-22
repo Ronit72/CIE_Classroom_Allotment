@@ -1,0 +1,33 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+  <h2>Upload {{name}} File</h2>
+  <h5>Please name the file as {{name}}.</h5>
+  <div class="container">
+    <form method="post" enctype="multipart/form-data" class='form-control'>
+      {% csrf_token %}
+      <div class = "mt-2">pdf:{{form.title}}</div>
+      <div class = "mt-2">{{form.pdf}}</div>
+      <div class = "mt-2">{{form.error}}  </div>
+          
+      {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-danger">
+              <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+              <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="mt-2" >
+              <button type="submit" class = "btn btn btn-primary" >Upload File</button>
+            </div>
+            
+    </form>
+  </div>
+
+{%endblock content%}

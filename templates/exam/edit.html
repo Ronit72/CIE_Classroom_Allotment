@@ -1,0 +1,45 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+<form method="POST" class="post-form" action="{% url 'updateexam' exam.course_no %}">  
+    {% csrf_token %}  
+<div class="container">  
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Update Details</h3>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Course No:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="exam_no" id="id_course_no" required maxlength="10" value="{{ exam.course_no }}"/>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Course Name:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="course_name" id="id_course_name" required maxlength="100" value="{{ exam.course_name }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Time:</label>  
+<div class="col-sm-4">  
+    <input type="time" name="time_slot" id="id_time_slot" required maxlength="25" value="{{  exam.time_slot }}" />  
+</div>  
+</div>
+<div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Date:</label>  
+    <div class="col-sm-4">  
+        <input type="date" name="exam_date" id="id_exam_date" required maxlength="25" value="{{  exam.exam_date }}" />  
+    </div>  
+    </div>
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-success">Update</button>  
+</div>  
+</div>  
+</div>  
+</form> 
+{%endblock content%}

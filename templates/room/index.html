@@ -1,0 +1,55 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+<form method="POST" class="post-form" action="">  
+    {% csrf_token %}  
+<div class="container">  
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Enter Details</h3>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Room No:</label>  
+<div class="col-sm-4">  
+  {{ form.room_no }}  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Capacity:</label>  
+<div class="col-sm-4">  
+  {{ form.capacity }}  
+</div>  
+</div>  
+<div class="form-group row">
+  <div class = "col-sm-4">{{form.error}}  </div>
+          
+      {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="alert alert-danger">
+              <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+              <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+<!--<label class="col-sm-2 col-form-label">Avaliability Status:</label>  
+<div class="col-sm-4">  
+  {{ form.avaliability_status }}  
+</div>  
+</div>   -->
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-primary">Submit</button>  
+</div>  
+</div>  
+</div>  
+</form>  
+{%endblock content%}

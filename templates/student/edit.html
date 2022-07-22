@@ -1,0 +1,45 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+<form method="POST" class="post-form" action="{% url 'updatestudent' student.usn %}">  
+    {% csrf_token %}  
+<div class="container">  
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Update Details</h3>  
+</div>  
+</div>  
+<div class="form-group row">  
+    <label class="col-sm-2 col-form-label">USN:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="usn" id="id_usn" placeholder="Ex: 1RV19IS007" required maxlength="10" pattern="1RV19[A-Z]+[A-Z]+[0-9]{3}" value="{{  student.usn }}" />  
+    </div>  
+    </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Semester:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="semester" id="id_semester" placeholder="1ST/2ND/3RD/4TH etc" pattern="1ST|2ND|3RD|[4-8]TH" required maxlength="3" value="{{  student.semester }}" />  
+    </div>  
+    </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Department:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="department" id="id_department" pattern="[A-Z]{3}|[A-Z]{2}" placeholder="ISE/CSE etc" required maxlength="3"value="{{  student.department }}" />  
+    </div>  
+    </div>
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Name:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="name" id="id_name" pattern="[a-z A-Z]*" oninvalid="setCustomValidity('Please enter alphabets only. ')"  placeholder="Name" required maxlength="50"  value="{{  student.name }}" />  
+    </div>  
+    </div>
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-success">Update</button>  
+</div>  
+</div>  
+</div>  
+</form> 
+{%endblock content%}

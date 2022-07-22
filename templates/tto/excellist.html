@@ -1,0 +1,38 @@
+{%extends 'admin_base.html' %}
+{%block content%}
+  <table  class="table">
+    <thead>
+        <tr>
+            <th style = "float:left">Name</th>
+            <th style = "position:relative; left:210px;">Download</th>
+            <th style = "float:right">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for excel in excels%}
+            <tr>
+                <td>{{excel.title}}</td>
+                <td>
+                   
+                    <form method="post" action="{{excel.xls.url}}" >
+                        {%csrf_token %}
+                        <button type="submit"class="btn btn-primary" style = "position:relative; left:200px;">Download</button>
+                            
+                        </form>
+                </td>
+                <td>
+                    <form method="post" action="{% url 'delete_excel' excel.pk %}" >
+                    {%csrf_token %}
+                    <button type="submit"class="btn btn-danger" style = "float:right">Delete</button>
+                        
+                    </form>
+                    
+                </td>
+            </tr>
+        {%endfor%}
+    </tbody>
+  </table>
+  <label for=""></label>
+  <label for=""></label>
+<div style="text-align: center;"><a href="/adminland/uploaddata"><button class="btn btn-primary" style = "float:center">Upload Data to DB</button></a></div>
+{%endblock content%}

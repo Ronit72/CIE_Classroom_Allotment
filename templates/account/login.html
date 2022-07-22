@@ -1,0 +1,13 @@
+
+{%extends 'base.html' %}
+{%block content%}
+<div style="text-align: center;" class=" login container">
+    <form class="site-form"  method="post">
+        {{form.as_p}}
+            {%csrf_token%}
+            <input type ="submit" value ="Log in" class="btn btn-primary btn-sm" >
+    </form>
+    
+</div>
+
+{%endblock content%}
