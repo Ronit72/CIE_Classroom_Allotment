@@ -15,30 +15,30 @@ WORKING
 
 OUTPUT
 
-![image](https://user-images.githubusercontent.com/69521280/180664590-9f11e890-32cb-4b48-ab58-62277dd00a4e.png)
-
 Initial window
 
-![image](https://user-images.githubusercontent.com/69521280/180664605-ece0258a-f57e-4bf5-9c61-2956d9936efe.png)
+![image](https://user-images.githubusercontent.com/69521280/180664590-9f11e890-32cb-4b48-ab58-62277dd00a4e.png)
 
 Student interface
 
-![image](https://user-images.githubusercontent.com/69521280/180664614-b2db999e-0b69-4258-849e-710f17bb2d25.png)
+![image](https://user-images.githubusercontent.com/69521280/180664605-ece0258a-f57e-4bf5-9c61-2956d9936efe.png)
 
 Teacher interface
 
-![image](https://user-images.githubusercontent.com/69521280/180664704-f037fbd8-2394-46bc-8fab-69ea02d199ad.png)
+![image](https://user-images.githubusercontent.com/69521280/180664614-b2db999e-0b69-4258-849e-710f17bb2d25.png)
 
 Uploading files in Admin interface
 
-![image](https://user-images.githubusercontent.com/69521280/180664683-30f08c4b-81c6-4003-83c9-311e05247f3c.png)
+![image](https://user-images.githubusercontent.com/69521280/180664704-f037fbd8-2394-46bc-8fab-69ea02d199ad.png)
 
 Checking uploaded files in Admin interface
 
-![image](https://user-images.githubusercontent.com/69521280/180664637-96cf068f-1d5f-4226-8d5f-f95f6833039f.png)
+![image](https://user-images.githubusercontent.com/69521280/180664683-30f08c4b-81c6-4003-83c9-311e05247f3c.png)
 
 Edit uploaded data in Admin interface
 
-![image](https://user-images.githubusercontent.com/69521280/180664754-ff6d41c0-020c-4d59-a5bd-9b00f1416422.png)
+![image](https://user-images.githubusercontent.com/69521280/180664637-96cf068f-1d5f-4226-8d5f-f95f6833039f.png)
 
 Algorithm which generates all the data of allocation
+
+![image](https://user-images.githubusercontent.com/69521280/180664754-ff6d41c0-020c-4d59-a5bd-9b00f1416422.png)
